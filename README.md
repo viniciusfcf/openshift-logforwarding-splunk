@@ -55,14 +55,14 @@ With all of the prerequisites met and an overview of the components provided in 
 3. Add the Red Hat Community of Practice Helm chart repository which contains the OpenShift Log Forwarding Splunk Chart
 
 ```
-helm repo add redhat-cop https://redhat-cop.github.io/helm-charts
+helm repo add viniciusfcf-repo https://raw.githubusercontent.com/viniciusfcf/viniciusfcf.github.io/master/charts
 helm repo update
 ```
 
 3. Deploy the log forwarding Helm chart by providing the value of the HEC token along with any additional values
 
 ```
-helm upgrade -i --namespace=openshift-logging openshift-logforwarding-splunk redhat-cop/openshift-logforwarding-splunk --set forwarding.splunk.token=<token>
+helm upgrade -i --namespace=openshift-logging openshift-logforwarding-splunk viniciusfcf-repo/openshift-logforwarding-splunk --set forwarding.splunk.token=4a8a737d-5452-426c-a6f7-106dca4e813f
 ```
 
 4. Annotate the `ClusterLogging` instance
